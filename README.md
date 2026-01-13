@@ -6,11 +6,17 @@
     to be created on the fly.
     Demos in my another project called leisure-software-renderer will be implemented
     in this Vulkan based project.
+    
+    My implementation philosophy in Vulkan terms, like new abstraction on demand becomes
+    - New resource bundle struct (my RenderTarget pattern in the leisure-software-renderer)
+        RT_ColorDepthMotion { Image color, depth, motion; }
+    - New pass struct
+        MotionBlurPass { Pipeline p; DescriptorSet ds; record(...) } so on...
 
 
 # Todos
     
-Core Vulkan Abstractions will be implemented as single header in the near fututure
+Core Vulkan Abstractions will be implemented as single header in the near future
 
     Context     : instance/device/queue/surface + function loader + allocator
     Swapchain   : swap images/views + format/extent + resize/recreate
@@ -50,7 +56,17 @@ Some advanced and ambitious things will be considered in the future
 
 Windows 11 + WSL2 + Vulkan 1.3+
 
-    sudo apt update && sudo apt install mesa-vulkan-drivers vulkan-tools libvulkan-dev
+    sudo apt install automake m4 libtool cmake build-essential
+    sudo apt install libssl-dev
+    sudo apt install libsdl2-dev
+    sudo apt install libpng-dev
+    sudo apt install libsdl2-image-dev
+    sudo apt install libglm-dev
+    sudo apt install libassimp-dev
+    sudo apt install mesa-vulkan-drivers 
+    sudo apt install vulkan-tools 
+    sudo apt install libvulkan-dev
+    sudo ldconfig
     vulkaninfo | less
 
 
